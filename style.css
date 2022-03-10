@@ -4,9 +4,55 @@ html {
     background-size: cover;
 }
 div {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 p{
-    font-size: 40px
+    font-size: 30px;
+    position: fixed;
+    top: 300px; 
+   
+}
+
+button {
+    width: 135px;
+    height: 195px;
+    background-image: url(card2.jpg);
+    background-size: cover;
+    border-radius: 7%;
+    float:left;
+    padding: 20px 20px 20px 16px;
+    border: none;
+    margin: 20px;
+}
+
+.card{
+    font-family: sans-serif;
+    border: solid 1px #aaa;border-radius: 9px;
+    width: 100px;
+    height: 170px;
+    float:left;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    margin: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-position-y: 35px;
+}
+
+.hearts {
+    background-image: url(hearts.jpg);  
+}
+
+.diamonds {
+    background-image: url(diamonds.jpg);
+}
+
+.spades {
+    background-image: url(spades.jpg);  
+}
+
+.clubs {
+    background-image: url(clubs.jpg);
 }
