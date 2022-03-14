@@ -1,5 +1,5 @@
 html {
-    background-image: url(background.jpg);
+    background-image: url(images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -7,17 +7,24 @@ div {
     font-size: 30px;
 }
 
+h1{
+    color:goldenrod;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Libre Baskerville', serif;
+}
+
 p{
     font-size: 30px;
     position: fixed;
-    top: 300px; 
-   
+    top: 400px; 
+    padding: 30px;
 }
 
 button {
     width: 135px;
     height: 195px;
-    background-image: url(card2.jpg);
+    background-image: url(images/card2.jpg);
     background-size: cover;
     border-radius: 7%;
     float:left;
@@ -42,17 +49,19 @@ button {
 }
 
 .hearts {
-    background-image: url(hearts.jpg);  
+    background-image: url(images/hearts.jpg);  
 }
 
 .diamonds {
-    background-image: url(diamonds.jpg);
+    background-image: url(images/diamonds.jpg);
 }
 
 .spades {
-    background-image: url(spades.jpg);  
+    background-image: url(images/spades.jpg);  
 }
 
 .clubs {
-    background-image: url(clubs.jpg);
+    background-image: url(images/clubs.jpg);
+    background-size: 140px;
+    background-position-y: 45px;
 }
