@@ -5,9 +5,7 @@ let cardContainer = document.querySelector(".cardHolder")
 let cardContainer2 = document.querySelector(".cardHolder2")
 let scoreContainer = document.querySelector(".score-el")
 let scoreContainer2 = document.querySelector(".score-el2")
-// let startGameButton = document.querySelector("buttons")
-// let showGame = document.querySelector(".start")
-
+let checkButtun = document.querySelector(".check-score")
 
 let suits = ["spades", "hearts", "clubs", "diamonds"]
 let values = [
@@ -67,7 +65,6 @@ let values = [
 let playerOneScore = 0
 let playerTwoScore = 0
 let deck = []
-let output = ""
 scorePoints = values.map(value => value.card)
 
 function getDeck (){
@@ -80,24 +77,23 @@ function getDeck (){
 }
 
 function countScore(card){
-    console.log(scorePoints, card)
-    if(scorePoints === "A"){
+    if(card.includes("A") === true){
         playerOneScore +=1
-    } else if(scorePoints.includes("2") === true) {
+    } else if(card.includes("2") === true) {
         playerOneScore +=2
-    } else if(scorePoints.includes("3") === true) {
+    } else if(card.includes("3") === true) {
         playerOneScore +=3
-    }else if(scorePoints.includes("4") === true) {
+    }else if(card.includes("4") === true) {
         playerOneScore +=4
-    }else if(scorePoints.includes("5") === true) {
+    }else if(card.includes("5") === true) {
         playerOneScore +=5
-    }else if(scorePoints.includes("6") === true) {
+    }else if(card.includes("6") === true) {
         playerOneScore +=6
-    }else if(scorePoints.includes("7") === true) {
+    }else if(card.includes("7") === true) {
         playerOneScore +=7
-    }else if(scorePoints.includes("8") === true) {
+    }else if(card.includes("8") === true) {
         playerOneScore +=8
-    }else if(scorePoints.includes("9") === true) {
+    }else if(card.includes("9") === true) {
         playerOneScore +=9
     }else {
         playerOneScore +=10
@@ -106,25 +102,24 @@ function countScore(card){
     console.log(playerOneScore)
 }
 
-console.log()
-function countScore2(){
-    if(scorePoints === "Ace"){
+function countScore2(card){
+    if(card.includes("A") === true){
         playerTwoScore +=1
-    } else if(scorePoints === "2") {
+    } else if(card.includes("2") === true) {
         playerTwoScore +=2
-    } else if(scorePoints === "3") {
+    } else if(card.includes("3") === true) {
         playerTwoScore +=3
-    }else if(scorePoints === "4") {
+    }else if(card.includes("4") === true) {
         playerTwoScore +=4
-    }else if(scorePoints === "5") {
+    }else if(card.includes("5") === true) {
         playerTwoScore +=5
-    }else if(scorePoints === "6") {
+    }else if(card.includes("6") === true) {
         playerTwoScore +=6
-    }else if(scorePoints === "7") {
+    }else if(card.includes("7") === true) {
         playerTwoScore +=7
-    }else if(scorePoints === "8") {
+    }else if(card.includes("8") === true) {
         playerTwoScore +=8
-    }else if(scorePoints === "9") {
+    }else if(card.includes("9") === true) {
         playerTwoScore +=9
     }else {
         playerTwoScore +=10
@@ -133,26 +128,15 @@ function countScore2(){
     // console.log(playerTwoScore)
 }
 
-// function stopGame(){
-
-// }
-
-function winninConditions() {
-    if(playerOneScore > 21 && playerTwoScore > 21) {
+function stopGame(){
+    if (playerOneScore >= 21) {
         randomCard.disabled = true
+    }
+}
+function stopGame2(){
+    if (playerTwoScore >= 21) {
         randomCard2.disabled = true
-        console.log("Both players are out")
-    } else if(playerOneScore === 21 && playerTwoScore === 21){
-        randomCard.disabled = true
-        randomCard2.disabled = true
-        console.log("Both players are winners!")
-    } else if(playerOneScore === 21 && playerTwoScore < 21) {
-        console.log("Player 2 is the winner ")
-    } else if (playerOneScore < 21 && playerTwoScore > 21){
-        console.log("Player 1 is the winner ")
-    } else {
-        console.log("Keep playing")
-        }
+    }
 }
 
 function getRandomCard (){
@@ -170,10 +154,10 @@ function getRandomCard (){
         output.classList.add("spades")
     }
     output.innerText = card.split(" ")[0]
-    console.log(card)
+    // console.log(card)
     cardContainer.appendChild(output)
     countScore(card)
-    winninConditions()
+    stopGame()
 }
 function getRandomCard2 (){
     let card = deck[Math.floor(Math.random()*deck.length)]
@@ -192,20 +176,35 @@ function getRandomCard2 (){
     output.innerText = card.split(" ")[0]
     // console.log(card)
     cardContainer2.appendChild(output)
-    countScore2()
-    winninConditions()
+    countScore2(card)
+    stopGame2()
 }
 
-// function startGame(){
-//     startGameButton.classList.remove('hidden')
-    
-// }
+function checkTheScore(){
+    if(playerOneScore < 21 && playerTwoScore > 21){
+        alert("Player 1 is the winner!")
+    }else if(playerOneScore > 21 && playerTwoScore > 21) {
+        alert("Both Players are out!")
+    }else if (playerOneScore > 21 && playerTwoScore < 21){
+        alert("Player 2 is the winner!")
+    }else if (playerTwoScore === 21 && playerOneScore !== 21){
+        alert("Player 2 is the winner!")
+    }else if (playerTwoScore !== 21 && playerOneScore === 21){
+        alert("Player 1 is the winner!")
+    }else if (playerOneScore > playerTwoScore) {
+        alert("Player 1 is the winner!")
+    }else if (playerOneScore < playerTwoScore) {
+        alert("Player 2 is the winner!")
+    } else {
+        console.log("It's a tie!")
+    }
+}
 getDeck()
 
 randomCard.addEventListener("click", getRandomCard)
 randomCard2.addEventListener("click", getRandomCard2)
-// showGame.addEventListener("click", startGame)
-console.log(getRandomCard())
+checkButtun.addEventListener("click", checkTheScore)
+// console.log(getRandomCard())
 
 // console.log(output)
 

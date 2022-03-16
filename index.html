@@ -12,18 +12,24 @@
 </head>
 <body>
     <h1>Black Jack</h1>
-    <!-- <button class="start">Start the game</button> -->
     <div class="buttons hidden">
     <h3>Click on the deck below to start the game</h3>
+
     <h2>Player 1</h2>
-    <p class="score-el">Score: 0</p>
-    <button class="cardButton deckButton"></button>
+    <div class="cards">
+        <button class="cardButton deckButton"></button>
+        <p class="score-el">Score: 0</p>
+        <div class="cardHolder"></div>
+    </div>  
+
     <h2>Player 2</h2>
-    <button class="cardButton2 deckButton"></button>
-    <p class="score-el2">Score: 0</p>
-    <div class="cardHolder"></div>
-    <div class="cardHolder2"></div>
+    <div class="cards">
+        <button class="cardButton2 deckButton"></button>
+        <p class="score-el2">Score: 0</p>
+        <div class="cardHolder2"></div>
     </div>
+    </div>
+    <button class="check-score">Check the Score</button>
 
     <script src="app.js"></script>
 </body>

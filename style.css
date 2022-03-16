@@ -1,5 +1,5 @@
 /* html {
-    background-image: url(images/green-background.jpg);
+    background-image: url(image/gree.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 } */
@@ -35,14 +35,6 @@ h1{
     align-content: space-between;
     flex-wrap: wrap;
 }
-
-/* .cardHolder {
-    flex:1;
-} */
-
-/* .cardHolder2{
-    margin-left: auto;
-}  */
 
 p{
     font-size: small;
@@ -94,9 +86,11 @@ h3{
     background-position-y: 45px;
 }
 
-/* .start{
-    float:inline-start
+.cards {
+    display: flex;
 }
-.hidden{
+
+
+/* .hidden{
     opacity: 0;
-} */
+}  */
