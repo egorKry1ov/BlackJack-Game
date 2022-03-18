@@ -1,19 +1,44 @@
-/* html {
-    background-image: url(image/gree.jpg);
+html {
+    background-image: url(images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-} */
+    width: auto;
+    height: 860px;
+}
 div {
     font-size: 25px;
 }
 
-h1{
-    color:goldenrod;
+h1{   
+    color:rgb(188, 188, 188);
     text-align: center;
-    font-size: 50px;
-    font-family: 'Libre Baskerville', serif;
+    font-size: 90px;
+    font-family: 'Michroma', sans-serif;
     border: none;
+    margin: 20px;
+    text-shadow: rgb(7, 7, 7) 10px 0 4px,
+    0px -3px 6px rgba(242,125,12,1),
+    0px -6px 12px rgba(255,150,100,1),
+    0px -10px 20px rgba(242,125,12,1),
+    0px -15px 30px rgba(255,50,50,1),
+    0px -21px 42px rgba(240,127,19,1);
+    -webkit-text-stroke: .1px rgb(70, 69, 69);
+    text-decoration-color: rgb(71, 71, 71); 
+    animation:effect 10s ease infinite, colorChange 1s linear infinite;
 }
+@keyframes effect {
+    50%{
+      text-shadow:0px -4px 8px white,
+      0px -12px 24px rgba(242,125,12,1),
+      0px -24px 48px rgba(255,150,100,1),
+      0px -40px 80px rgba(242,125,12,1),
+      0px -60px 120px rgba(255,50,50,1),
+      0px -84px 168px rgba(240,127,19,1);
+    }      
+    }
+    @keyframes colorChange {
+      to{filter:hue-rotate(360deg)}
+    }
 
 .deckButton {
     width: 90px;
@@ -37,19 +62,27 @@ h1{
 }
 
 p{
-    font-size: small;
+    font-size: 18px;
     text-align: center; 
+    
     
 }
 h2 {
     font-size: large;
     text-align: left;
+    color: rgb(6, 6, 6);
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .5px;
+    /* font-family: 'Libre Baskerville', serif; */
+    /* font-style: oblique; */
+    -webkit-text-stroke: .5px rgb(153, 146, 129);
+    margin-left: 37px;
+    
 }
 
 h3{
     font-style: italic;
     font-size: large;
-
 }
 
 .card{
@@ -89,8 +122,43 @@ h3{
 .cards {
     display: flex;
 }
+ .option-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid #0f0f0f;
+    margin-right: 30px;
+    margin-left: 165px ;
+    margin-top: 40px;
+    width: 170px;
+    height: 30px;
+    box-shadow: 0px 3px 4px black;
+ }
 
+ .option-btn:hover {
+     background-color:rgb(170, 163, 163);
+ }
+ .winner {
+    text-align: center;
+    margin: 30px;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    animation: flicker 3s infinite alternate;
+    color: rgb(8, 7, 7);
+  }
 
-/* .hidden{
-    opacity: 0;
-}  */
+ @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px rgb(243, 8, 8),
+        0 0 11px rgb(131, 20, 20),
+        0 0 19px rgb(131, 12, 12),
+        0 0 40px rgb(255, 72, 0),
+        0 0 80px rgb(255, 115, 0),
+        0 0 90px rgb(255, 85, 0),
+        0 0 100px rgb(255, 81, 0),
+        0 0 150px rgb(255, 136, 0);
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+  }

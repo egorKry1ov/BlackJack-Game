@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ramaraja&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Black Jack</h1>
-    <div class="buttons hidden">
-    <h3>Click on the deck below to start the game</h3>
-
-    <h2>Player 1</h2>
-    <div class="cards">
-        <button class="cardButton deckButton"></button>
-        <p class="score-el">Score: 0</p>
-        <div class="cardHolder"></div>
-    </div>  
-
-    <h2>Player 2</h2>
-    <div class="cards">
-        <button class="cardButton2 deckButton"></button>
-        <p class="score-el2">Score: 0</p>
-        <div class="cardHolder2"></div>
+    <h1>BlackJack</h1>
+    <div class="buttons">
+        <h2>Player 1</h2>
+        <div class="cards">
+            <button class="cardButton deckButton"></button>
+            <p class="score-el">Score: 0</p>
+            <div class="cardHolder"></div>
+        </div>  
+        
+        <h2>Player 2</h2>
+        <div class="cards">
+            <button class="cardButton2 deckButton"></button>
+            <p class="score-el2">Score: 0</p>
+            <div class="cardHolder2"></div>
+        </div>
     </div>
-    </div>
-    <button class="check-score">Check the Score</button>
+    <div class="winner"></div>
+    <button class="check-score option-btn">Check Score</button>
+    <button class="reset option-btn">Play Again</button>
 
     <script src="app.js"></script>
 </body>

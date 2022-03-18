@@ -6,6 +6,8 @@ let cardContainer2 = document.querySelector(".cardHolder2")
 let scoreContainer = document.querySelector(".score-el")
 let scoreContainer2 = document.querySelector(".score-el2")
 let checkButtun = document.querySelector(".check-score")
+let resetButton = document.querySelector(".reset")
+let winner = document.querySelector(".winner")
 
 let suits = ["spades", "hearts", "clubs", "diamonds"]
 let values = [
@@ -99,7 +101,7 @@ function countScore(card){
         playerOneScore +=10
     }
     scoreContainer.innerText = `Score: ${playerOneScore}`
-    console.log(playerOneScore)
+    // console.log(playerOneScore)
 }
 
 function countScore2(card){
@@ -182,30 +184,33 @@ function getRandomCard2 (){
 
 function checkTheScore(){
     if(playerOneScore < 21 && playerTwoScore > 21){
-        alert("Player 1 is the winner!")
+        winner.innerText = "Player 1 is the winner!"
     }else if(playerOneScore > 21 && playerTwoScore > 21) {
-        alert("Both Players are out!")
+        winner.innerText = "Both Players are out!"
     }else if (playerOneScore > 21 && playerTwoScore < 21){
-        alert("Player 2 is the winner!")
+        winner.innerText = "Player 2 is the winner!"
     }else if (playerTwoScore === 21 && playerOneScore !== 21){
-        alert("Player 2 is the winner!")
+        winner.innerText = "Player 2 is the winner!"
     }else if (playerTwoScore !== 21 && playerOneScore === 21){
-        alert("Player 1 is the winner!")
+        winner.innerText = "Player 1 is the winner!"
     }else if (playerOneScore > playerTwoScore) {
-        alert("Player 1 is the winner!")
+        winner.innerText = "Player 1 is the winner!"
     }else if (playerOneScore < playerTwoScore) {
-        alert("Player 2 is the winner!")
+        winner.innerText = "Player 2 is the winner!"
     } else {
-        console.log("It's a tie!")
+        winner.innerText = "It's a tie!"
     }
 }
+
 getDeck()
 
 randomCard.addEventListener("click", getRandomCard)
 randomCard2.addEventListener("click", getRandomCard2)
 checkButtun.addEventListener("click", checkTheScore)
+resetButton.addEventListener("click", function (){window.location.reload()})
+
 // console.log(getRandomCard())
 
 // console.log(output)
 
-console.log(scorePoints)
+// console.log(scorePoints)
